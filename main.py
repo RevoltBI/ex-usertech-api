@@ -1,5 +1,6 @@
 import requests
 import json
+import csv
 
 #DEFAULT VARIABLES
 USERTECH_API_URL = "http://carvago-temporary.utdigit.com:8000/api/cars?limit=1000&offset="
@@ -10,13 +11,16 @@ print("Starting downloading process...")
 
 current_offset = DEFAULT_OFFSET
 
+with open('data/out/tables/data.csv', 'w') as csvfile:
+    writer = csv.writer(csvfile, delimiter=',', quotechar='"', lineterminator='\n', quoting=csv.QUOTE_MINIMAL)
+
+    writer.writerow(["pic", "ahoj"])
+
 while 1 == 1:
     url = USERTECH_API_URL + str(current_offset)
 
     response = requests.get(url)
     response = json.loads(response.text)
-
-    print("OK")
 
     last = 0
 
