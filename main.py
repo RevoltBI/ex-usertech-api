@@ -60,7 +60,9 @@ with open(params['OUTPUT'], 'w') as csvfile:
         "trailer_coupling",
         "id",
         "title",
-        "model_edition"
+        "model_edition",
+        "model_family",
+        "make"
     ])
 
     while 1 == 1:
@@ -133,7 +135,9 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     row["trailer_coupling"]["const_key"],
                     row["id"],
                     row["title"],
-                    row["model_edition"]
+                    row["model_edition"]["const_key"],
+                    row["model_edition"]["model_family"]["const_key"],
+                    row["model_edition"]["model_family"]["make"]["const_key"]
                 ])
             except:
                 print("Writing error")
