@@ -10,7 +10,7 @@ params = cfg.get_parameters()
 #DOWNLOADING PROCESS
 print("Starting downloading process...")
 
-current_offset = params['DEFAULT_OFFSET']
+current_offset = int(params['DEFAULT_OFFSET'])
 
 with open(params['OUTPUT'], 'w') as csvfile:
     writer = csv.writer(csvfile, delimiter=',', quotechar='"', lineterminator='\n', quoting=csv.QUOTE_MINIMAL)
@@ -133,6 +133,6 @@ with open(params['OUTPUT'], 'w') as csvfile:
             except:
                 print("Writing error")
 
-        current_offset += params['OFFSET']
+        current_offset += int(params['OFFSET'])
 
 print("Job done!")
