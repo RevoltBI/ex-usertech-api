@@ -12,7 +12,7 @@ print("Starting downloading process...")
 
 current_offset = params['DEFAULT_OFFSET']
 
-with open('/data/out/tables/data.csv', 'w') as csvfile:
+with open(params['OUTPUT'], 'w') as csvfile:
     writer = csv.writer(csvfile, delimiter=',', quotechar='"', lineterminator='\n', quoting=csv.QUOTE_MINIMAL)
 
     writer.writerow([
