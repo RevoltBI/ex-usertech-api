@@ -330,8 +330,8 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     model_family,
                     make_model
                 ])
-            except:
-                print("Writing error")
+            except Exception as e:
+                print(e)
 
         current_offset += int(params['OFFSET'])
 
