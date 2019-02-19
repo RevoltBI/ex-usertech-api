@@ -1,15 +1,16 @@
 import requests
 import json
 import csv
+from keboola import docker
 
-#DEFAULT VARIABLES
-USERTECH_API_URL = "http://carvago-temporary.utdigit.com:8000/api/cars?limit=1000&offset="
-DEFAULT_OFFSET = 0
+#GET DATA FROM CONFIG JSON
+cfg = docker.Config('/data/')
+params = cfg.get_parameters()
 
 #DOWNLOADING PROCESS
 print("Starting downloading process...")
 
-current_offset = DEFAULT_OFFSET
+current_offset = params['DEFAULT_OFFSET']
 
 with open('/data/out/tables/data.csv', 'w') as csvfile:
     writer = csv.writer(csvfile, delimiter=',', quotechar='"', lineterminator='\n', quoting=csv.QUOTE_MINIMAL)
@@ -65,7 +66,7 @@ with open('/data/out/tables/data.csv', 'w') as csvfile:
     while 1 == 1:
         print("Downloading for offset: " + str(current_offset))
 
-        url = USERTECH_API_URL + str(current_offset)
+        url = params['URL'] + "?" + params['LIMIT_PARAM'] + "=" + params['LIMIT'] + "&" + params['OFFSET_PARAM'] + "=" + str(current_offset)
 
         response = requests.get(url)
         response = json.loads(response.text)
@@ -132,6 +133,6 @@ with open('/data/out/tables/data.csv', 'w') as csvfile:
             except:
                 print("Writing error")
 
-        current_offset += 1000
+        current_offset += params['OFFSET']
 
 print("Job done!")
