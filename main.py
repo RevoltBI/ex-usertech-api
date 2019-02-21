@@ -286,7 +286,7 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     row["cubic_capacity"],
                     row["power"],
                     row["number_of_seats"],
-                    features,
+                    json.dumps(features),
                     fuel_type,
                     transmission,
                     vehicle_type,
@@ -326,8 +326,8 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     trailer_coupling,
                     row["id"],
                     row["title"],
-                    model_edition,
-                    model_family,
+                    json.dumps(model_edition),
+                    json.dumps(model_family),
                     make_model
                 ])
             except Exception as e:
