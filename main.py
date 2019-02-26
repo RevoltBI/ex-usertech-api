@@ -71,7 +71,12 @@ with open(params['OUTPUT'], 'w') as csvfile:
         url = params['URL'] + "?" + params['LIMIT_PARAM'] + "=" + params['LIMIT'] + "&" + params['OFFSET_PARAM'] + "=" + str(current_offset)
 
         response = requests.get(url)
-        response = json.loads(response.text)
+
+        try:
+            response = json.loads(response.text)
+        except:
+            print("Failed to JSON decode")
+            continue
 
         last = 0
 
