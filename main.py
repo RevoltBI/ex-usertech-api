@@ -326,8 +326,8 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     trailer_coupling,
                     row["id"],
                     row["title"],
-                    model_edition,
-                    model_family,
+                    model_edition[0],
+                    model_family[0],
                     make_model
                 ])
             except Exception as e:
