@@ -276,6 +276,8 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     model_edition = row["model_edition"]["const_key"],
                     model_family = row["model_edition"]["model_family"]["const_key"],
                     make_model = row["model_edition"]["model_family"]["make"]["const_key"]
+                    model_edition = ''.join(model_edition)
+                    model_family = ''.join(model_family)
                 except:
                     model_edition = row["model_edition"]
                     model_family = row["model_edition"]
@@ -326,8 +328,8 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     trailer_coupling,
                     row["id"],
                     row["title"],
-                    model_edition.replace('(', '').replace(')', '').replace(',', ''),
-                    model_family.replace('(', '').replace(')', '').replace(',', ''),
+                    str(model_edition).replace('(', '').replace(')', '').replace(',', ''),
+                    str(model_family).replace('(', '').replace(')', '').replace(',', ''),
                     make_model
                 ])
             except Exception as e:
