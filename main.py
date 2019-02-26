@@ -282,6 +282,8 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     model_edition = row["model_edition"]
                     model_family = row["model_edition"]
                     make_model = row["model_edition"]
+                    model_edition = ''.join(model_edition)
+                    model_family = ''.join(model_family)
 
                 writer.writerow([
                     row["power_hp"],
