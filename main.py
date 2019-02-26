@@ -326,8 +326,8 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     trailer_coupling,
                     row["id"],
                     row["title"],
-                    model_edition[0],
-                    model_family[0],
+                    model_edition.replace('(', '').replace(')', '').replace(',', ''),
+                    model_family.replace('(', '').replace(')', '').replace(',', ''),
                     make_model
                 ])
             except Exception as e:
