@@ -290,6 +290,9 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     model_edition = ''.join(model_edition)
                     model_family = ''.join(model_family)
 
+                model_edition = str(model_edition).replace('(', '').replace(')', '').replace(',', '')
+                model_family = str(model_family).replace('(', '').replace(')', '').replace(',', '')
+
                 writer.writerow([
                     row["power_hp"],
                     row["cubic_capacity"],
@@ -335,8 +338,8 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     trailer_coupling,
                     row["id"],
                     row["title"],
-                    str(model_edition).replace('(', '').replace(')', '').replace(',', ''),
-                    str(model_family).replace('(', '').replace(')', '').replace(',', ''),
+                    model_edition,
+                    model_family,
                     make_model
                 ])
             except Exception as e:
