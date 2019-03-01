@@ -105,6 +105,13 @@ with open(params['OUTPUT'], 'w') as csvfile:
                 except:
                     fuel_type = row["fuel_type"]
 
+                drive = "null"
+
+                try:
+                    drive = row["drive"]["const_key"]
+                except:
+                    drive = row["drive"]
+
                 transmission = "null"
 
                 try:
@@ -310,7 +317,7 @@ with open(params['OUTPUT'], 'w') as csvfile:
                     row["weight"],
                     row["number_of_gears"],
                     row["carbon_dioxide_emission"],
-                    row["drive"],
+                    drive,
                     car_style,
                     emission_class,
                     row["equipment_version"],
