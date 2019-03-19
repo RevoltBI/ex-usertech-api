@@ -1,2 +1,6 @@
-vendor
 .git
+.gitignore
+.travis.yml
+deploy.sh
+README.md
+vendor
