@@ -10,262 +10,234 @@ params = cfg.get_parameters()
 
 def write_header(writer):
     writer.writerow([
-        "power_hp",
-        "cubic_capacity",
-        "power",
-        "number_of_seats",
-        "features",
-        "fuel_type",
-        "transmission",
-        "vehicle_type",
-        "fuel_consumption_urban",
-        "fuel_consumption_extra_urban",
-        "fuel_consumption_combined",
-        "fuel_consumption_unit",
-        "power_unit",
-        "weight",
-        "number_of_gears",
-        "carbon_dioxide_emission",
-        "drive",
-        "car_style",
-        "emission_class",
-        "equipment_version",
-        "manufactured_from",
-        "manufactured_to",
-        "interior_material",
-        "number_of_airbags",
-        "air_conditioning",
-        "audio",
-        "auxiliary_heating",
-        "ceiling_material",
-        "cruise_control",
-        "display",
-        "door_count",
-        "folding_roof",
-        "hands_free",
-        "headlights_type",
-        "parking_camera",
-        "parking_sensors",
-        "rear_spoiler",
-        "sliding_doors",
-        "spare_tyre",
-        "sunroof",
-        "tailgate_opening",
-        "trailer_coupling",
-        "id",
-        "title",
-        "model_edition",
-        "model_family",
-        "make"
+        'power_hp',
+        'cubic_capacity',
+        'power',
+        'number_of_seats',
+        'features',
+        'fuel_type',
+        'transmission',
+        'vehicle_type',
+        'fuel_consumption_urban',
+        'fuel_consumption_extra_urban',
+        'fuel_consumption_combined',
+        'fuel_consumption_unit',
+        'power_unit',
+        'weight',
+        'number_of_gears',
+        'carbon_dioxide_emission',
+        'drive',
+        'car_style',
+        'emission_class',
+        'equipment_version',
+        'manufactured_from',
+        'manufactured_to',
+        'interior_material',
+        'number_of_airbags',
+        'air_conditioning',
+        'audio',
+        'auxiliary_heating',
+        'ceiling_material',
+        'cruise_control',
+        'display',
+        'door_count',
+        'folding_roof',
+        'hands_free',
+        'headlights_type',
+        'parking_camera',
+        'parking_sensors',
+        'rear_spoiler',
+        'sliding_doors',
+        'spare_tyre',
+        'sunroof',
+        'tailgate_opening',
+        'trailer_coupling',
+        'id',
+        'title',
+        'model_edition',
+        'model_family',
+        'make'
     ])
 
 
 def write_row(writer, row):
     try:
         features = []
-
-        for feature in row["features"]:
+        for feature in row['features']:
             try:
                 features.append(feature['const_key'])
             except:
                 continue
 
-        fuel_type = "null"
-
+        fuel_type = 'null'
         try:
-            fuel_type = row["fuel_type"]["const_key"]
+            fuel_type = row['fuel_type']['const_key']
         except:
-            fuel_type = row["fuel_type"]
+            fuel_type = row['fuel_type']
 
-        drive = "null"
-
+        drive = 'null'
         try:
-            drive = row["drive"]["const_key"]
+            drive = row['drive']['const_key']
         except:
-            drive = row["drive"]
+            drive = row['drive']
 
-        transmission = "null"
-
+        transmission = 'null'
         try:
-            transmission = row["transmission"]["const_key"]
+            transmission = row['transmission']['const_key']
         except:
-            transmission = row["transmission"]
+            transmission = row['transmission']
 
-        vehicle_type = "null"
-
+        vehicle_type = 'null'
         try:
-            vehicle_type = row["vehicle_type"]["const_key"]
+            vehicle_type = row['vehicle_type']['const_key']
         except:
-            vehicle_type = row["vehicle_type"]
+            vehicle_type = row['vehicle_type']
 
-        car_style = "null"
-
+        car_style = 'null'
         try:
-            car_style = row["car_style"]["const_key"]
+            car_style = row['car_style']['const_key']
         except:
-            car_style = row["car_style"]
+            car_style = row['car_style']
 
-        emission_class = "null"
-
+        emission_class = 'null'
         try:
-            emission_class = row["emission_class"]["const_key"]
+            emission_class = row['emission_class']['const_key']
         except:
-            emission_class = row["emission_class"]
+            emission_class = row['emission_class']
 
-        interior_material = "null"
-
+        interior_material = 'null'
         try:
-            interior_material = row["interior_material"]["const_key"]
+            interior_material = row['interior_material']['const_key']
         except:
-            interior_material = row["interior_material"]
+            interior_material = row['interior_material']
 
-        number_of_airbags = "null"
-
+        number_of_airbags = 'null'
         try:
-            number_of_airbags = row["number_of_airbags"]["const_key"]
+            number_of_airbags = row['number_of_airbags']['const_key']
         except:
-            number_of_airbags = row["number_of_airbags"]
+            number_of_airbags = row['number_of_airbags']
 
-        air_conditioning = "null"
-
+        air_conditioning = 'null'
         try:
-            air_conditioning = row["air_conditioning"]["const_key"]
+            air_conditioning = row['air_conditioning']['const_key']
         except:
-            air_conditioning = row["air_conditioning"]
+            air_conditioning = row['air_conditioning']
 
-        audio = "null"
-
+        audio = 'null'
         try:
-            audio = row["audio"]["const_key"]
+            audio = row['audio']['const_key']
         except:
-            audio = row["audio"]
+            audio = row['audio']
 
-        auxiliary_heating = "null"
-
+        auxiliary_heating = 'null'
         try:
-            auxiliary_heating = row["auxiliary_heating"]["const_key"]
+            auxiliary_heating = row['auxiliary_heating']['const_key']
         except:
-            auxiliary_heating = row["auxiliary_heating"]
+            auxiliary_heating = row['auxiliary_heating']
 
-        ceiling_material = "null"
-
+        ceiling_material = 'null'
         try:
-            ceiling_material = row["ceiling_material"]["const_key"]
+            ceiling_material = row['ceiling_material']['const_key']
         except:
-            ceiling_material = row["ceiling_material"]
+            ceiling_material = row['ceiling_material']
 
-        cruise_control = "null"
-
+        cruise_control = 'null'
         try:
-            cruise_control = row["cruise_control"]["const_key"]
+            cruise_control = row['cruise_control']['const_key']
         except:
-            cruise_control = row["cruise_control"]
+            cruise_control = row['cruise_control']
 
-        display = "null"
-
+        display = 'null'
         try:
-            display = row["display"]["const_key"]
+            display = row['display']['const_key']
         except:
-            display = row["display"]
+            display = row['display']
 
-        door_count = "null"
-
+        door_count = 'null'
         try:
-            door_count = row["door_count"]["const_key"]
+            door_count = row['door_count']['const_key']
         except:
-            door_count = row["door_count"]
+            door_count = row['door_count']
 
-        folding_roof = "null"
-
+        folding_roof = 'null'
         try:
-            folding_roof = row["folding_roof"]["const_key"]
+            folding_roof = row['folding_roof']['const_key']
         except:
-            folding_roof = row["folding_roof"]
+            folding_roof = row['folding_roof']
 
-        hands_free = "null"
-
+        hands_free = 'null'
         try:
-            hands_free = row["hands_free"]["const_key"]
+            hands_free = row['hands_free']['const_key']
         except:
-            hands_free = row["hands_free"]
+            hands_free = row['hands_free']
 
-        headlights_type = "null"
-
+        headlights_type = 'null'
         try:
-            headlights_type = row["headlights_type"]["const_key"]
+            headlights_type = row['headlights_type']['const_key']
         except:
-            headlights_type = row["headlights_type"]
+            headlights_type = row['headlights_type']
 
-        parking_camera = "null"
-
+        parking_camera = 'null'
         try:
-            parking_camera = row["parking_camera"]["const_key"]
+            parking_camera = row['parking_camera']['const_key']
         except:
-            parking_camera = row["parking_camera"]
+            parking_camera = row['parking_camera']
 
-        parking_sensors = "null"
-
+        parking_sensors = 'null'
         try:
-            parking_sensors = row["parking_sensors"]["const_key"]
+            parking_sensors = row['parking_sensors']['const_key']
         except:
-            parking_sensors = row["parking_sensors"]
+            parking_sensors = row['parking_sensors']
 
-        rear_spoiler = "null"
-
+        rear_spoiler = 'null'
         try:
-            rear_spoiler = row["rear_spoiler"]["const_key"]
+            rear_spoiler = row['rear_spoiler']['const_key']
         except:
-            rear_spoiler = row["rear_spoiler"]
+            rear_spoiler = row['rear_spoiler']
 
-        sliding_doors = "null"
-
+        sliding_doors = 'null'
         try:
-            sliding_doors = row["sliding_doors"]["const_key"]
+            sliding_doors = row['sliding_doors']['const_key']
         except:
-            sliding_doors = row["sliding_doors"]
+            sliding_doors = row['sliding_doors']
 
-        spare_tyre = "null"
-
+        spare_tyre = 'null'
         try:
-            spare_tyre = row["spare_tyre"]["const_key"]
+            spare_tyre = row['spare_tyre']['const_key']
         except:
-            spare_tyre = row["spare_tyre"]
+            spare_tyre = row['spare_tyre']
 
-        sunroof = "null"
-
+        sunroof = 'null'
         try:
-            sunroof = row["sunroof"]["const_key"]
+            sunroof = row['sunroof']['const_key']
         except:
-            sunroof = row["sunroof"]
+            sunroof = row['sunroof']
 
-        tailgate_opening = "null"
-
+        tailgate_opening = 'null'
         try:
-            tailgate_opening = row["tailgate_opening"]["const_key"]
+            tailgate_opening = row['tailgate_opening']['const_key']
         except:
-            tailgate_opening = row["tailgate_opening"]
+            tailgate_opening = row['tailgate_opening']
 
-        trailer_coupling = "null"
-
+        trailer_coupling = 'null'
         try:
-            trailer_coupling = row["trailer_coupling"]["const_key"]
+            trailer_coupling = row['trailer_coupling']['const_key']
         except:
-            trailer_coupling = row["trailer_coupling"]
+            trailer_coupling = row['trailer_coupling']
 
-        model_edition = "null"
-        model_family = "null"
-        make_model = "null"
-
+        model_edition = 'null'
+        model_family = 'null'
+        make_model = 'null'
         try:
-            model_edition = row["model_edition"]["const_key"],
-            model_family = row["model_edition"]["model_family"]["const_key"],
-            make_model = row["model_edition"]["model_family"]["make"]["const_key"]
+            model_edition = row['model_edition']['const_key'],
+            model_family = row['model_edition']['model_family']['const_key'],
+            make_model = row['model_edition']['model_family']['make']['const_key']
             model_edition = ''.join(model_edition)
             model_family = ''.join(model_family)
         except:
-            model_edition = row["model_edition"]
-            model_family = row["model_edition"]
-            make_model = row["model_edition"]
+            model_edition = row['model_edition']
+            model_family = row['model_edition']
+            make_model = row['model_edition']
             model_edition = ''.join(model_edition)
             model_family = ''.join(model_family)
 
@@ -273,28 +245,28 @@ def write_row(writer, row):
         model_family = str(model_family).replace('(', '').replace(')', '').replace(',', '')
 
         writer.writerow([
-            row["power_hp"],
-            row["cubic_capacity"],
-            row["power"],
-            row["number_of_seats"],
+            row['power_hp'],
+            row['cubic_capacity'],
+            row['power'],
+            row['number_of_seats'],
             json.dumps(features),
             fuel_type,
             transmission,
             vehicle_type,
-            row["fuel_consumption_urban"],
-            row["fuel_consumption_extra_urban"],
-            row["fuel_consumption_combined"],
-            row["fuel_consumption_unit"],
-            row["power_unit"],
-            row["weight"],
-            row["number_of_gears"],
-            row["carbon_dioxide_emission"],
+            row['fuel_consumption_urban'],
+            row['fuel_consumption_extra_urban'],
+            row['fuel_consumption_combined'],
+            row['fuel_consumption_unit'],
+            row['power_unit'],
+            row['weight'],
+            row['number_of_gears'],
+            row['carbon_dioxide_emission'],
             drive,
             car_style,
             emission_class,
-            row["equipment_version"],
-            row["manufactured_from"],
-            row["manufactured_to"],
+            row['equipment_version'],
+            row['manufactured_from'],
+            row['manufactured_to'],
             interior_material,
             number_of_airbags,
             air_conditioning,
@@ -315,8 +287,8 @@ def write_row(writer, row):
             sunroof,
             tailgate_opening,
             trailer_coupling,
-            row["id"],
-            row["title"],
+            row['id'],
+            row['title'],
             model_edition,
             model_family,
             make_model
