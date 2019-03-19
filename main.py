@@ -3,11 +3,11 @@ import json
 import csv
 from keboola import docker
 
-#GET DATA FROM CONFIG JSON
 cfg = docker.Config('/data/')
+# GET DATA FROM CONFIG JSON
 params = cfg.get_parameters()
 
-#DOWNLOADING PROCESS
+# DOWNLOADING PROCESS
 print("Starting downloading process...")
 
 current_offset = int(params['DEFAULT_OFFSET'])
