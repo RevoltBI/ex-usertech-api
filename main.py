@@ -3,8 +3,8 @@ import json
 import csv
 from keboola import docker
 
-cfg = docker.Config('/data/')
 # GET DATA FROM CONFIG JSON
+cfg = docker.Config()
 params = cfg.get_parameters()
 
 # DOWNLOADING PROCESS
